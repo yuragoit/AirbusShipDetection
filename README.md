@@ -1,6 +1,6 @@
 # [Semantic Segmentation (Airbus Ship Detection Challenge)]
 
-You can go to (28.07.23 planned deploy Semantic Segmentation module):
+You can go to (28.07.23 planned deployment of a Semantic Segmentation module to main App):
 <a href='https://webmlassistantteam2-production.up.railway.app/' target="_blank">LIVE Web-ML Assistant App</a>
 
 # Stack of technologies used
