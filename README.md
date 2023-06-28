@@ -1,6 +1,6 @@
 # [Semantic Segmentation (Airbus Ship Detection Challenge)]
 
-You can go to (28.07.23 planned deployment of a Semantic Segmentation module to main App):
+You can go to:
 <a href='https://webmlassistantteam2-production.up.railway.app/' target="_blank">LIVE Web-ML Assistant App</a>
 
 # Stack of technologies used
@@ -136,6 +136,9 @@ Prediction mask 3:
 
 ![image](https://github.com/yuragoit/webMLAssistantTeam2/assets/101989870/83e419d4-cc47-4db8-a41a-91b896d650d4)
 
+UI
+
+![ML_Semantic](https://github.com/yuragoit/AirbusShipDetection/assets/101989870/0dce0a55-72ef-4d6d-adb7-42b7da2894fa)
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
