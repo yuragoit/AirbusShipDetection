@@ -59,12 +59,18 @@ def dice_coef(y_true, y_pred, smooth=1):
     union = K.sum(y_true, axis=[1,2,3]) + K.sum(y_pred, axis=[1,2,3])           # un = y_true_flatten ed ∪ y_pred_flattened
     return K.mean((2 * intersection + smooth) / (union + smooth), axis=0)     # dice = 2 * int + 1 / un + 1
 
+def focal_loss_fixed(y_true, y_pred, gamma=2.0, alpha=0.25):
+    pt_1 = tf.where(tf.equal(y_true, 1), y_pred, tf.ones_like(y_pred))
+    pt_0 = tf.where(tf.equal(y_true, 0), y_pred, tf.zeros_like(y_pred))
+    focal_loss_fixed = -K.mean(alpha * K.pow(1. - pt_1, gamma) * K.log(pt_1+K.epsilon())) - K.mean((1 - alpha) * K.pow(pt_0, gamma) * K.log(1. - pt_0 + K.epsilon()))
+    return focal_loss_fixed
+
 # Load pretrained model
 
 #for kaggle users
 #seg_model = keras.models.load_model('seg_unet_model.h5', custom_objects={'Combo_loss': Combo_loss, 'dice_coef': dice_coef})
 #for local users
-seg_model = keras.models.load_model('models/seg_unet_model.h5', custom_objects={'Combo_loss': Combo_loss, 'dice_coef': dice_coef})
+seg_model = keras.models.load_model('models/seg_unet_model.h5', custom_objects={'Combo_loss': Combo_loss, 'dice_coef': dice_coef, 'focal_loss_fixed': focal_loss_fixed})
 
 # Visualize some predictions
 
